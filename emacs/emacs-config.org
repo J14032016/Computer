@@ -1,0 +1,82 @@
+* Ctrl to Caps locks
+switch the Ctrl and Caps lock: 
+add a new field to 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout 
+with name : Scancode Map 
+and type : Binary Value 
+and value : 00000000 00000000 03000000 3A001D00 1D003A00 00000000
+
+* HOME setting
+regedit
+HKEY_LOCAL_MACHINE\SOFTWARE\GUN\Emacs
+add a string
+with name : HOME
+and value : D:\Program Files\Emacs
+
+* auto-complete config
+move file"auto-complete" to ~/.emacs.d/emacs-plugins
+then add this to .emacs
+
+(add-to-list 'load-path "~/.emacs.d/emacs-plugins/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories “~/.emacs.d/emacs-plugins/auto-conplete/ac-dict")
+(ac-config-default)
+
+* yasnippet config
+;;; yasnippet-config
+(add-to-list 'load-path "~/.emacs.d/emacs-plugins/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/emacs-plugins/yasnippet/snippets")
+
+* color-theme config
+;;; color theme
+(add-to-list 'load-path "~/.emacs.d/emacs-plugins/color-theme")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-gnome2)
+
+* emacs-w3m config
+   将emacs-w3m文件夹放到 ~/.emacs.d/emacs-plugins 文件夹中
+   安装gc(emacs-w3m默认没有，要自己安装)
+   将gc文件夹也放到上述文件夹中
+   cd 到gc目录中
+   ./configure
+   make
+   make check
+   sudo make install
+   安装好gc后再cd 切换到emacs-w3m目录中
+   ./configure
+   sudo make
+   sudo make install
+
+   再安装w3m-el-snapshot
+   sudo apt-get install w3m-el-snapshot
+
+   在终端中输入 w3m www.google.com 进入网页
+
+   再配置w3m
+; emacs-w3m setting                                                   
+(add-to-list 'load-path "~/.emacs.d/emacs-plugins/emacs-w3m")         
+;(autoload 'w3m "w3m" "interface for w3m on emacs" t);load & init     
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t) 
+;(autoload 'w3m-search "w3m-search" "Search words using emacs-w3m." t)
+(setq w3m-use-cookies t);enable cookies                               
+(setq w3m-home-page "http://www.google.com")                          
+(require 'mime-w3m)                                                   
+(setq w3m-default-toggle-inline-images t)                             
+(setq w3m-default-display-inline-images t) 
+
+* cedet config
+M-x semantic-add-system-include
+选择include目录即可
+* sr-speedbar config
+;;; sr-speedbar                          
+(add-to-list 'load-path "~/.emacs.d/")   
+(require 'sr-speedbar)                   
+(setq sr-speedbar-right-side nil)        
+(setq sr-speedbar-width 25)              
+(global-set-key (kbd "<f4>")             
+                (lambda ()               
+                  (interactive)          
+                  (sr-speedbar-toggle))) 
