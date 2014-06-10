@@ -1,0 +1,99 @@
+* 第一章：HTML基础
+** 2.1第一个html页面
+    Tag：HTML标记最基本的格式：<标记>内容</标记>,标记通常成对使用，
+    <标记>表示某种格式的开始，</标记>表示这种格式的结束
+    文本编辑器编辑好，保存时修改文件的扩展名，HTML文件的扩展名
+    为html或htm 保存类型选择“所有文件”。不允许使用汉字或特殊字符作为文件名
+** 2.2标准HTML文件的结构
+    1.html标记 2.head头部信息标记 3.title（标题标记） 4.body（主题标记）
+** 2.3基本HTML标记
+    1.正文标题标记 从<h1>到<h6> 这些标记的作用是设置正文标题字体的大小。
+     <html/>
+     <head>
+     <title>标题标记的作用</title>
+     </head>
+     <body>
+      这里是正文···
+      <h1>这是H1标题字，它最大</h1>
+      <h2>这是H2标题字</h2>
+      <h3>这是H3标题字</h3>
+      <h4>这是H4标题字</h4>
+      <h5>这是H5标题字</h5>
+      <h6>这是H6标题字，它最小</h6>
+     </body>
+    </html>  
+    2.分段标记<p>和换行标记<br/>  <p>标记的作用是分段；<br/>标记的作用是换行，另起一行
+     <body>
+      大家好<p>我是分段标记，是一对哦~</p>
+      看清楚哦<br/>我是换行标记，是个单标记！
+     </body>  
+    3.注释语句标记<!-- -->
+** 2.4列表标记
+    1.有序列表 每个列表项前标有数字，表示顺序。有序列表由<ol>开始，每个列表项由<li>开始
+     <body>
+      <strong>常用的搜索引擎</strong>
+       <ol>
+        <li>百度</li>
+	    <li>Google</li>
+	    <li>雅虎</li>
+       </ol>
+     </body>
+     
+     <strong>标记的作用是强调显示，<ol>标记和<li>标记必须相互配合使用
+     有序列表中除了默认的阿拉伯数字之外，还有很多其他排序的方式，使用方法：<ol style="a">···</ol>
+       属性值1：阿拉伯数字序列
+       属性值a：小写英文字母序列
+       属性值A：大写英文字母序列
+       属性值i：小写罗马数字序列
+       属性值I：大写罗马数字序列
+    2.无序列表  不要数字标记每一个列表项。采用一个符号标志每个列表项。  无序列表由<ul>开始，每个列表项同样由<li>开始
+     <body>
+      <strong>儿时的经典动画片</strong>
+      <ul>
+       <li>大闹天空</li>
+       <li>九色鹿</li>
+       <li>阿凡提</li>
+      </ul>
+     </body> 
+     
+     
+     <ul>标记和<li>标记必须相互配合使用 
+     无序列表除了默认的圆黑点之外，还有很多其他显示的方法 使用方法：<ul style="circle">···</ul>
+       属性值 disc 默认的园黑点
+       属性值circle空心圆环
+       属性值squre方块
+       
+** 2.5HTML的属性
+     1.align的属性   定义对齐方式，常见的属性值有left、center、right三种
+       <body>
+        <p align="left">左对齐</p>
+        <p align="center">居中对齐</p>
+        <p align="right">右对齐</p>
+       </body>
+     
+      2.style属性    定义样式，如文字的大小，色彩，背景颜色等。格式：<标记 style="属性名称1:属性值1；属性名称2：属性值2">···</标记>
+          <body>
+           <p style="color:red;font-size:12px:">文字的大小和颜色都改变了哦~</p>
+          </body>
+          
+** 2.6HTML的颜色
+      在HTML中颜色有两种表示方式。一种是用颜色名称表示，例如blue表示蓝色，red表示红色；另一种是用十六进制的数值表示的RGB（red green blue）的颜色值  
+      RGB分别是Red，Green，Blue的首字母，RGB每一个原色的最小值是0（十六进制为零），最大值是255（十六进制为FF）。
+      RGB颜色表示方式是#RRGGBB 其中RR、GG、BB的取值范围都是从00到FF，如白色的RGB值（255，255,255）就用#FFFFFF表示；黑色的RGB值（0,0,0），就用#000000表示
+        <body style="background-color:#006600">我有背景颜色了，哈哈~~
+        </body>
+    
+** 2.7 <div>和<span>
+      <div>标记是一个块状的容器，其默认的状态就是占据整个一行。
+      <span>标记是一个行间的容器，其默认状态是行间的一部分，占据的长短由内容得多少决定
+    
+** 2.8 滚动字幕<marquee>
+      <marquee>···</marquee>
+      direction,bahavior,loop,scrollamount,align,bgcolor,height,width
+      
+      
+      
+        <body>
+         <marquee direction="up" onmouseover="stop()"  onmouseout="start()">通知<br/>有人看我就停下来<br/>没人看我就继续走~~</marquee>
+        </body>    
+     

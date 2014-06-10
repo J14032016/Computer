@@ -1,0 +1,8 @@
+fitoptions.dll
+_fitoptionsGetMcrID		_fitoptionsGetMcrID
+_fitoptionsInitialize		_fitoptionsInitialize
+_fitoptionsInitializeWithHandlers		_fitoptionsInitializeWithHandlers
+_fitoptionsPrintStackTrace		_fitoptionsPrintStackTrace
+_fitoptionsTerminate		_fitoptionsTerminate
+_mlfFitoptions		_mlfFitoptions
+_mlxFitoptions		_mlxFitoptions

@@ -1,0 +1,152 @@
+* useful function
+** 光标位置
+(point)  ; 返回当前光标位置
+(point-max)  ; 光标最大位置，即文件尾
+(region-beginning) (region-end) ; region的头和尾
+(buffer-end 1) ; 返回buffer结尾的绝对位置，无视narrow-to-region
+** 移动光标和搜索
+(goto-char 300) ; 移动光标到300
+
+(forward-char n) ; 向前移动n字符 后backward
+(skip-chars-forward "\n\t") ; 跳过所有 \n\t 返回移动的字符数
+(search-forward myStr) ; 向前移动光标到myStr后面 返回光标的位置
+** 文本编辑
+(delete-char 9) ; 删除光标后9个字符 
+(delete-region mystartpos myendpos) ; 删除选中的两点之间的文本
+(insert "Forza Inter") ; 在当前光标中插入一个字符串
+(length "ABC") ; 3
+(substring myStr startIndex endIndex) ; 获取一个子串
+(replace-regxp-in-string myRegex myReplacement myStr) ; 正则表达式替换
+
+** buffers
+(buffer-name) 
+(buffer-file-name)
+(set-buffer myBufferName)
+
+** 连接字符串函数 concat 或者 concatenate
+
+例：解决一键编译问题
+(defun onekey-compile ()
+  " defun one key to compile "
+  (interactive)
+  (save-buffer t)
+  (shell-command 
+    (concat "gcc -g -Wall -o "
+            (file-name-base)
+            " "
+            (buffer-file-name))))
+(defun onekey-compile ()
+  " defun one key to compile "
+  (interactive)
+  (save-buffer t)
+  (shell-command 
+    (concatenate 'string  "gcc -g -Wall -o "
+                          (file-name-base)
+                          " "
+                          (buffer-file-name))))
+(global-set-key [C-f9] 'onekey-compile)
+(defun onekey-run ()
+  (interactive)
+  (shell-command (file-name-base)))
+(global-set-key [C-f10] 'onekey-run)
+
+** 键绑定函数
+(global-set-key (kbd "C-c C-c") 'function-name)
+(global-set-key (kbd "<f4>") 'function-name)
+(global-set-key [C-tab] 'function-name)
+
+** 查找文件函数
+设置快捷键一键打开文件 find-file
+
+(defun open-emacs-init ()
+  " open emacs init file .emacs "
+  (interactive)
+  (find-file "path-of-the-file/file-name"))
+(global-set-key (kbd "") 'open-emacs-init)
+
+
+
+
+(global-set-key (kbd "C-<tab>") 'hippie-expand)   
+hippie-expand   扩展 
+
+view-mode 只读模式
+
+
+* basic manipulation
+|--------------+-----------------------|
+| manipulation | description           |
+|--------------+-----------------------|
+| C-x h        | mark-whole-buffer     |
+| M-x cua-mode | open cua-mode (C-RET) |
+| C-M-v        | scroll other buffer   |
+| C-x z        | repeat                |
+| C-x ()       | start macro/end       |
+|--------------+-----------------------|
+
+
+* dired
+M-x dired    进入 directory edit 模式
+equal to C-x d
+dired模式下的操作
+|------------+------------------------------------------|
+| manipulate | description                              |
+|------------+------------------------------------------|
+| m          | mark the file                            |
+| C          | copy file                                |
+| R          | rename file                              |
+| q          | close the dir                            |
+| d          | mark the file with delete                |
+| u          | undo the mark                            |
+| D          | delete the file instantly                |
+| x          | delete all files marked with delete      |
+| ~          | mark all backup files                    |
+| +          | add a new folder                         |
+|------------+------------------------------------------|
+| M          | chmod                                    |
+| G          | chgrp                                    |
+| O          | chown                                    |
+| P          | print                                    |
+| Z          | compress/uncompress                      |
+| i          | 将光标所在行的目录内容显示在当前buffer中 |
+| * s        | 给当前所有文件打标记                     |
+| * !        | 取消当前所有的标记                       |
+| * /        | 给当前所有文件夹打标记                   |
+| * *        | 给当前所有可执行文件打上标记             |
+| * t        | 反选（有*的变没，没*的变有）             |
+|------------+------------------------------------------|
+
+
+* gdb
+|-------------+------------------|
+| manipulate  | description      |
+|-------------+------------------|
+| C-x C-a C-b | 在当前行设置断点 |
+| C-x SPC     | 同上             |
+| C-c C-c     | 中断             |
+| C-c C-z     | 终止             |
+| C-x C-a C-s | step             |
+| C-x C-a C-n | next             |
+| C-x C-a C-t | tbreak           |
+| C-x C-a C-r | continue         |
+| C-x C-a C-d | 删除当前行的断点 |
+| C-x C-a C-l | 到达最后一行     |
+|-------------+------------------|
+
+
+* w3m
+|--------------+------------------|
+| manipulation | description      |
+|--------------+------------------|
+| Q            | close w3m        |
+| q            | leave w3m        |
+| U            | open URL         |
+| V            | open file        |
+| S            | search by google |
+| B            | back             |
+| N            | forward          |
+| H            | home             |
+| R            | refresh          |
+| a            | add to bookmark  |
+| v            | visit bookmark   |
+|--------------+------------------|

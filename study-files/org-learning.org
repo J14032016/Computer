@@ -1,0 +1,62 @@
+* Tables
+** The build-in table editor
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  18 |
+| Dim   |  2345 |  18 |
+** The spread sheet
+|-------+------+---------+-----|
+| Name  | Math | English | sum |
+|-------+------+---------+-----|
+| Peter |   98 |      99 | 197 |
+| Dim   |  100 |      90 | 190 |
+|       |      |         |     |
+|-------+------+---------+-----|
+   #+TBLFM: $4=@2$2+@2$3
+
+org use general operator that looks like this:
+@ROW$COLUMN
+
+Here are a few examples :
+|-----------+-----------------------------|
+| Operation | meaning                     |
+|-----------+-----------------------------|
+| @2$3      | 2nd row, 3rd column         |
+| C2        | same as previous            |
+| $5        | column 5 in the current row |
+| @2        | current column, row 2       |
+|-----------+-----------------------------|
+
+* Hyperlinks
+Like HTML, Org proides links inside a file, external links to other
+files, Usenet articles, emails, and much more.
+
+** Link format
+Org will recongnize plain URL-like links and activate them as clickable
+links. The general link format, however, looks like this:
+
+[ [link][description] ] or alternatively [ [link] ]
+the link can be followed with 'C-c C-o' when the cursor is on the link
+# <<My Target>>
+[[My Target]]
+[[Hyperlinks]]
+
+** External links
+|----------------------+-----------------------------------+---------------|
+| format               | description                       | Implement     |
+|----------------------+-----------------------------------+---------------|
+| http://www.baidu.com | on the web                        | [[http://www.baidu.com][百度]]          |
+| file:/~/.emacs       | file, absolute path               | [[file:~/.emacs][emacs配置文档]] |
+| [[file:/~/.emacs::33 | open the file and jump to line 33 | [[file:~/.emacs::33][.emacs第33行]]  |
+|----------------------+-----------------------------------+---------------|
+
+* TODO Items [50%]
+** TODO Commands
+
+The most important commands to work with TODO entries are: 'C-c C-t'
+Rotate the TODO state of the current item among
+-> unmarked -> TODO -> DONE
+
+** DONE subtasks
+add [%] or [\] to the end of the task
+

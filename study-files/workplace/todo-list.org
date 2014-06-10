@@ -1,0 +1,40 @@
+* Todo list in the second year
+** DONE English[2/2] prepare for cet 6
+(already passed!)
+(prepare for IELTS)
+*** DONE listening
+download listening material
+*** DONE reading
+reading some English news
+buying cet6 material
+
+** programming[6/9] basicly learning by self
+*** DONE c plus plus(read over)
+reading C++ Primer
+*** DONE MFC (read over)
+    reading Windows Visual C++
+*** DONE Emacs Lisp
+    reading Common lisp
+*** TODO Structure and Interpretation of Computer Programs
+*** DONE vi learning
+basic editing technique
+
+*** TODO python
+*** TODO html (java)
+general web page making(containing javascript)
+watching video
+*** DONE MatLab
+learning matlab by watching video and pdf
+*** DONE Assimbly
+    reading books
+
+** reading[3/4]
+*** DONE Go by with wind
+*** DONE The Count of Monte Cristo
+
+** skills[2/3]
+*** DONE photoshop
+learning from examples
+*** TODO flash making 
+*** DONE Video making(Corel)
+general dub and subtitle making

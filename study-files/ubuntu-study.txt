@@ -1,0 +1,66 @@
+ubuntu翻墙
+
+安装证书导入工具的命令 sudo apt-get install libnss3-tools
+
+将goAgent文件夹内的证书文件CA.crt导入(下面中括号内是证书的绝对路径，因人而异，注意)： certutil -d sql:$HOME/.pki/nssdb -A -t TC -n “goagent” -i [/path/to/goagent/local/CA.crt]
+
+启动代理，命令：python proxy.py（在local文件夹下）
+
+ 
+
+取消文件夹或文件等右下解一把锁的标志的方法
+sudo chmod -R 777 路径(文件夹或文件)
+
+ 
+
+删除文件夹
+sudo rm -rf ..
+
+ 
+
+配置环境变量
+sudo gedit etc/profile
+
+ 
+
+更改hosts后用sudo时会显示 sudo：无法解析主机：qianyi-Lenovo-G480
+要在host中加上 127.0.0.1 qianyi-Lenovo-G480
+
+ 
+
+切换到root用户
+sudo -s -H
+
+ 
+
+Linux 终端下 提示 -bash 权限不够 解决办法
+chmod +x 可执行文件名
+再./运行即可
+
+ 
+
+ubuntu的tty模式下乱码
+安装fbterm：
+sudo apt-get install fbterm
+然后在tty(Ctrl+Alt+F1)里运行fbterm:
+sudo fbterm
+
+ 
+
+删除缓存
+
+sudo apt-get autoclean 清理旧版本的软件缓存
+sudo apt-get clean 清理所有软件缓存
+sudo apt-get autoremove 删除系统不再使用的孤立软件
+
+
+删除软件
+
+sudo apt-get remove --purge 软件名
+sudo apt-get autoremove 删除系统不再使用的孤立软件
+sudo apt-get autoclean 清理旧版本的软件缓存
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P 清除残余的配置文件
+
+
+ubuntu打开dropbox
+~/.dropbox-dist/dropboxd 

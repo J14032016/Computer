@@ -1,0 +1,21 @@
+* English Words and Phrases
+|--------------------+----------|
+| be dedicated to    | 致力于   |
+| span               | 垃圾邮件 |
+| nifty tricks       | 俏皮技巧 |
+| looms over         | 笼罩     |
+| pledge             | 抵押     |
+| intervention       | 介入     |
+| centigrade         | 摄氏度   |
+| Idealism           | 唯心主义 |
+| Materialism        | 唯物主义 |
+| divide and conquer | 分布解决 |
+| embedded           | 嵌入式的 |
+| alias              | 别名     |
+| clockwise          | 顺时针   |
+| counterclockwise   | 逆时针   |
+| transpose          | 转置     |
+|                    |          |
+|--------------------+----------|
+
+* Classic Examples

@@ -1,0 +1,26 @@
+* windows 编程基础
+** windwos提供一个应用程序接口（API）。它是windows支持的函数定义、
+参数定义、和消息格式的集合
+C库函数的目标代码直接放到程序目标代码中
+而windows api函数的目标代码则位于程序之外的某个动态链接库（dll）中
+而动态链接库允许这些程序共享这个函数的代码，从而节省了内存
+** winddwos 程序生命期
+CreateWindow() -> GetMessage() -> DispatchMessage() -> DefWindowProc()
+-> PostQuitMessage() -> GetMessage()
+** WinMain()入口函数
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+LPSTR lpCmdLine, int nCmdShow)
+WinMain函数在执行过程中，完成以下工作
+定义窗口类 -> 注册窗口类 -> 创建窗口 -> 显示并更新窗口 -> 进入消息循环
+
+BOOL WINAPI GetMessage(LPMSG, HWND, UINT, UINT);
+
+Alt + F8代码对齐
+* WIN32编程基础
+** 用WIN32API编写一个简单的Windows程序
+#incldue "windows.h"
+int APIENTRY WinMain(HINSTANCE hInstance,
+HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
+    MessageBox(NULL, "Hello world!", "My First Windows!", MB_YESNO);
+    return 0;
+}

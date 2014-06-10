@@ -1,0 +1,27 @@
+﻿1. Crack Url Wait Code Login For Chrome
+	网盘，下载站免码，登陆，读秒
+http://userscripts.org/scripts/show/157621
+
+2. The URL downloads 
+	网页上所有的迅雷，快车，qq旋风专用链接解密解码，显示为http直接下载
+http://userscripts.org/scripts/show/158396
+
+3. OpenGG.Clean.Player
+	去除优酷和土豆播放器中的黑屏和广告
+http://userscripts.org/scripts/show/162286
+
+4. baidu search result handler
+	方便搜索，提供360，google搜索跳转
+http://userscripts.org/scripts/show/140960	
+
+5 google monkey
+http://userscripts.org/scripts/show/9310
+
+6. search jump around
+http://userscripts.org/scripts/show/61372
+
+7. Google Translator
+http://userscripts.org/scripts/show/150664
+
+8. Adkil media and download
+https://chrome.google.com/webstore/detail/adkill-and-media-download/lcibdonokophlabplhpmmmjjbgohgcok/related

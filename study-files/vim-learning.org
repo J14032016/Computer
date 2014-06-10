@@ -1,0 +1,47 @@
+* general keybinding
+|---------+------------------------------------------|
+| fa      | search forward in current line           |
+| Fa      | search backward                          |
+| ta      | stop before the searched letter          |
+| 3G      | goto line 3                              |
+| C-g     | show status line                         |
+| C-u     | scroll up                                |
+| C-d     | scroll down                              |
+| cw      | delete a word and put you in insert mode |
+| J       | join the two lines                       |
+| rx      | replace current letter                   |
+| ~       | change case                              |
+| qa      | keyboard Macros in register a            |
+| ma      | place marks in register a                |
+| /string | search string from the beginning         |
+| ?string | reverse search                           |
+|---------+------------------------------------------|
+C-\ C-n   ==  C-[  == Esc
+
+* advance useage
+系统剪切板为    "+
+|----------+---------------------------------|
+| :sp      | split the windows               |
+| C-w C-w  | goto other windows              |
+| C-w c    | close current windows           |
+| ggvG     | 高亮选中全文                    |
+| "*y      | 复制vim中的内容到系统剪切板     |
+| "*p      | 将系统剪切板中的内容复制到vim中 |
+| ggvG "*y | 全选并复制到系统剪切板          |
+|----------+---------------------------------|
+
+* search
+|--------+---------------------------------------------------|
+| /^the  | find that "the" in the beginning of the line      |
+| /the$  | find that "the" in the end of the line            |
+| /^the$ | find line only contains "the"                     |
+| /^$    | find empty lines                                  |
+| /T.is  | Match any single character .   find this and tiis |
+|--------+---------------------------------------------------|
+
+* buffer
+:buffers  show all buffers
+:buffer 1 goto buffer 1
+:bnext    goto the next buffer
+
+* visual mode

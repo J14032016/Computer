@@ -1,0 +1,7 @@
+fitoptionsInitialize
+fitoptionsInitializeWithHandlers
+fitoptionsTerminate
+fitoptionsPrintStackTrace
+fitoptionsGetMcrID
+mlxFitoptions
+mlfFitoptions

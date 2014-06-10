@@ -1,0 +1,60 @@
+* 画图
+基本思想：
+先设定一个CPoint型的值保存鼠标按下的位置，然后再用系统给的
+CPoint型的值保存的鼠标弹起的位置，
+调用MoveTo（）函数先移动到按下的位置：MoveTo(m_ptOrigin)
+在调用LineTo(point)函数在两点之间划线即可
+函数调用的对象是CClientDC
+** 初始工作：保存按下位置
+   在DrawView中添加CPoint型的私有成员变量m_ptOriginal,系统在
+   DrawView的构造函数中会自动将他初始化为零
+   添加消息 Message : LButtonDown  来接收鼠标点下的信息
+   Add Handler -> Edit Code ->
+   在其中把m_ptOriginal 值定为 point : m_ptOriginal = point;
+** 添加消息 Message : LButtonUp  来接收鼠标点起后的动作
+	Edit Code 后在OnLButtonUp函数中添加代码
+** 划线
+    CClientDC dc(this);
+    dc.MoveTo(m_ptOrigin);
+    dc.LineTo(point);
+*** 另解
+1) HDC实现
+HDC hdc;
+hdc = ::GetDC(m_hWnd); //调用平台sdk函数，前面加上全局作用符：：
+MoveToEx(hdc, m_ptOriginal.x, m_ptOriginal.y, NULL);
+LineTo(hdc, point.x, point.y);
+::Release(m_hWnd, hdc);
+2) CDC实现
+CDC* pDC = GetDC();
+pDC->MoveTo(m_ptOriginal);
+pDC->LineTo(point);
+Release(pDC);
+3) 画笔实现
+CPen pen(PS_SOLID, 1, RGB(255, 0, 0));
+CClientDC dc(this);
+CPen* pOldPen = dc.SelectObject(pen);
+dc.MoveTo(m_ptOriginal);
+dc.LineTo(point);
+dc.SelectObject(pOldPen);
+4) 笔刷实现
+CBrush brush(RGB(255, 0, 0));
+CClientDC dc(this);
+dc.FillRect(CRect(m_ptOriginal, point), &brush);
+			
+** (扩展) 画画(笔不断)
+基本思想：
+添加一个bool型值来作为标志，若鼠标按下就划线，鼠标弹起就停止
+则鼠标按下为真，鼠标弹起为假
+每次划一小段线，就把终点值赋为起点值，这样就能画出连续的图形
+在MOUSEMOVE函数中使用
+*** 添加一个新的bool型的私有成员m_bDraw，构造函数初始化为false，
+		在OnLButtonDown中将其设置为真 : m_bDraw = TURE;
+        在OnLButtonUp中将其设置为假:m_bDraw = FALSE;
+*** 添加消息 Message : MouseMove
+        添加如下代码：
+        CClientDC dc(this);
+        if(m_bDraw == TRUE){
+            dc.MoveTo(m_ptOrigin);
+            dc.LineTo(point);
+            m_ptOrigin = point;//这里是重点，将终点值赋为起点值
+        }
